@@ -1,5 +1,5 @@
 Analysis & Synthesis report for chenillard
-Fri Sep 25 17:30:35 2026
+Tue Oct  6 10:48:56 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,7 +10,14 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +41,27 @@ on the Quartus Prime software download page.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Fri Sep 25 17:30:35 2026               ;
-; Quartus Prime Version       ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
-; Revision Name               ; chenillard                                      ;
-; Top-level Entity Name       ; chenillard                                      ;
-; Family                      ; Cyclone V                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Oct  6 10:48:56 2026           ;
+; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                   ; chenillard                                      ;
+; Top-level Entity Name           ; chenillard                                      ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 30                                              ;
+; Total pins                      ; 8                                               ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +160,115 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; chenillard.vhd                   ; yes             ; User VHDL File  ; C:/Users/moham/Downloads/1-tuto_modelsim/chenillard/chenillard.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 17          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 30          ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 2           ;
+;     -- 5 input functions                    ; 3           ;
+;     -- 4 input functions                    ; 0           ;
+;     -- <=3 input functions                  ; 25          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 30          ;
+;                                             ;             ;
+; I/O pins                                    ; 8           ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; i_clk~input ;
+; Maximum fan-out                             ; 30          ;
+; Total fan-out                               ; 207         ;
+; Average fan-out                             ; 2.72        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |chenillard                ; 30 (30)             ; 30 (30)                   ; 0                 ; 0          ; 8    ; 0            ; |chenillard         ; chenillard  ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 23    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; r_leds[0]                              ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 30                          ;
+;     CLR               ; 1                           ;
+;     CLR SCLR          ; 23                          ;
+;     ENA CLR           ; 6                           ;
+; arriav_lcell_comb     ; 31                          ;
+;     arith             ; 23                          ;
+;         1 data inputs ; 23                          ;
+;     normal            ; 8                           ;
+;         1 data inputs ; 3                           ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 2                           ;
+; boundary_port         ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.20                        ;
+; Average LUT depth     ; 2.20                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,21 +277,25 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Sep 25 17:30:22 2026
+    Info: Processing started: Tue Oct  6 10:48:36 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off chenillard -c chenillard
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file chenillard.vhd
-    Info (12022): Found design unit 1: chenillard-rtl File: C:/Users/moham/Downloads/1-tuto_modelsim/chenillard/chenillard.vhd Line: 13
+    Info (12022): Found design unit 1: chenillard-rtl File: C:/Users/moham/Downloads/1-tuto_modelsim/chenillard/chenillard.vhd Line: 12
     Info (12023): Found entity 1: chenillard File: C:/Users/moham/Downloads/1-tuto_modelsim/chenillard/chenillard.vhd Line: 4
 Info (12127): Elaborating entity "chenillard" for the top level hierarchy
-Error (10533): VHDL Wait Statement error at chenillard.vhd(24): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/moham/Downloads/1-tuto_modelsim/chenillard/chenillard.vhd Line: 24
-Error (10441): VHDL Process Statement error at chenillard.vhd(17): Process Statement cannot contain both a sensitivity list and a Wait Statement File: C:/Users/moham/Downloads/1-tuto_modelsim/chenillard/chenillard.vhd Line: 17
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4843 megabytes
-    Error: Processing ended: Fri Sep 25 17:30:35 2026
-    Error: Elapsed time: 00:00:13
-    Error: Total CPU time (on all processors): 00:00:26
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 35 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Tue Oct  6 10:48:56 2026
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:34
 
 

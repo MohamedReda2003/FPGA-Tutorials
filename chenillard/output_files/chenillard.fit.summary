@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Sep 25 17:25:29 2026
+Fitter Status : Successful - Tue Oct  6 10:50:31 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : chenillard
 Top-level Entity Name : chenillard
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 1 / 41,910 ( < 1 % )
-Total registers : 3
+Logic utilization (in ALMs) : 17 / 41,910 ( < 1 % )
+Total registers : 34
 Total pins : 8 / 314 ( 3 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
