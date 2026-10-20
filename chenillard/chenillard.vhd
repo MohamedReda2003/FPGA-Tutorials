@@ -12,8 +12,8 @@ end entity chenillard;
 
 architecture rtl of chenillard is
 
-    -- periode du pas : 1 000 000 coups d'horloge = 20 ms a 50 MHz
-    constant C_MAX    : natural := 1_000_000;
+    -- periode du pas : 10 000 000 coups d'horloge = 20 ms a 50 MHz
+    constant C_MAX    : natural := 10_000_000;
     constant C_TICK   : natural := C_MAX - 1;
 
     signal r_counter  : natural range 0 to C_TICK;
@@ -53,7 +53,7 @@ begin
         elsif rising_edge(i_clk) then
             if r_tick = '1' then
                 if r_dir = '0' then
-                    r_led <= r_led(6 downto 0) & '0';   -- decalage vers la gauche
+                    r_led <= r_led(6 downto 0) & '1';   -- decalage vers la gauche
                 else
                     r_led <= '0' & r_led(7 downto 1);   -- decalage vers la droite
                 end if;
@@ -63,6 +63,14 @@ begin
                     r_dir <= '1';
                 elsif r_led = "00000001" then
                     r_dir <= '0';
+						elsif r_led = "11111111" then
+							if r_tick = '1' then
+								if r_dir = '0' then
+									r_led <= r_led(6 downto 0) & '0';   -- decalage vers la gauche
+							 else
+								  r_led <= '1' & r_led(7 downto 1);   -- decalage vers la droite
+							 end if;
+						end if;	
                 end if;
             end if;
         end if;

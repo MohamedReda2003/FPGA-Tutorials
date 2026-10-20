@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Oct 20 08:21:45 2026
+Analysis & Synthesis Status : Successful - Tue Oct 20 08:54:08 2026
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : chenillard
 Top-level Entity Name : chenillard
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 30
+Total registers : 34
 Total pins : 10
 Total virtual pins : 0
 Total block memory bits : 0

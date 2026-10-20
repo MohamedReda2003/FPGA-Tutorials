@@ -58,7 +58,7 @@ set_global_assignment -name VHDL_FILE chenillard.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_V11 -to i_clk
+set_location_assignment PIN_Y13 -to i_clk
 set_location_assignment PIN_AG28 -to o_leds[0]
 set_location_assignment PIN_AG23 -to o_leds[4]
 set_location_assignment PIN_AE25 -to o_leds[1]
