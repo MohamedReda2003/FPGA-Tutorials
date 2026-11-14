@@ -1,5 +1,3 @@
-# Load canceled
-# Compile of hdmi_controler.vhd was successful.
-# Compile of hdmi_controler_tb.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-# Load canceled
+pwd
+# C:/Users/moham/Downloads/1-tuto_modelsim/1-tuto_modelsim
+cd ..
