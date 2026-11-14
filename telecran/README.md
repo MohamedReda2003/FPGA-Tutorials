@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="media/ensea_logo.png" alt="ENSEA" width="180"/>
-
 # Écran magique sur FPGA
 
 **TP FPGA – Petit projet** · ENSEA · 2G2 TD1 TP1
