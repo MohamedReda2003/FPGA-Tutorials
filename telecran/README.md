@@ -120,7 +120,7 @@ dec = (/Aq1 · Bq1 · /Bq2) + ( Aq1 · /Bq1 · Bq2)
 Soit, pour chaque sortie, **deux portes ET à trois entrées suivies d'une porte OU**, derrière **quatre bascules D** (deux par voie).
 
 <div align="center">
-<img src="media/schema_decodeur_quadrature.png" alt="Schéma logique du décodeur de quadrature" width="720"/>
+<img src="media/diagramme de bloc logique__encodeur.png" alt="Schéma logique du décodeur de quadrature" width="720"/>
 
 *Schéma logique du décodeur de quadrature : quatre bascules D, quatre portes ET et deux portes OU produisant `inc` et `dec`.*
 </div>
@@ -223,11 +223,7 @@ Le bus `o_hdmi_tx_d` est un bus **RGB 24 bits** : bits 23→16 = rouge, 15→8 =
 
 Les rectangles de la dernière colonne et de la dernière ligne sont tronqués (le rouge s'arrête à 207, le vert à 223). Cela confirme le bon fonctionnement des compteurs `x`, `y` et du bus RGB.
 
-<div align="center">
-<img src="media/test_degrade_hdmi.png" alt="Dégradé de test du contrôleur HDMI" width="560"/>
 
-*Dégradé de test : rouge selon x, vert selon y.*
-</div>
 
 ---
 
@@ -265,7 +261,7 @@ o_hdmi_tx_d <= x"FFFFFF" when ( s_x_counter = to_integer ( unsigned ( s_enc_x ) 
 - Ici `o_hdmi_tx_d` dépend directement des compteurs alors que `DE` est enregistré (retard d'un cycle) : l'image est décalée d'un pixel, sans conséquence pour un pixel isolé. Cette latence est compensée naturellement dans la version avec mémoire.
 
 <div align="center">
-<img src="media/pixel_mobile.jpg" alt="Pixel blanc déplacé par les encodeurs" width="560"/>
+<img src="media/apparition du pixel bougeant dans l&apos;ecran.jpeg" alt="Pixel blanc déplacé par les encodeurs" width="560"/>
 
 *Apparition du pixel blanc (indiqué par la flèche) qui se déplace à l'écran.*
 </div>
@@ -379,7 +375,7 @@ o_hdmi_tx_d <= x"FFFFFF" when ( s_fb_qb (0) = '1' ) else x"000000";
 Déplacer les encodeurs trace un trait blanc qui **reste affiché** à l'écran.
 
 <div align="center">
-<img src="media/trace_memorise.png" alt="Trait mémorisé dans le framebuffer" width="560"/>
+<img src="media/ecran magique.png.jpeg" alt="Trait mémorisé dans le framebuffer" width="560"/>
 
 *Tracé conservé en mémoire après déplacement des encodeurs.*
 </div>
@@ -522,7 +518,7 @@ En revenant en arrière, les pixels s'éteignent donc un par un, mais le pixel q
 On trace un trait avec l'encodeur, puis on revient en arrière sur ce trait : les pixels traversés s'éteignent.
 
 <div align="center">
-<img src="media/demo_effacement_trait.gif" alt="Démonstration : effacer un trait en repassant dessus" width="560"/>
+<img src="media/sortie-du-code.gif" alt="Démonstration : effacer un trait en repassant dessus" width="560"/>
 
 *Démonstration sur carte de la fonction d'effacement par repassage.*
 </div>
