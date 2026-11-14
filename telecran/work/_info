@@ -1,0 +1,222 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/moham/Downloads/1-tuto_modelsim/telecran
+Eclock_enable
+Z1 w1792486635
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R0
+Z5 8clock_enable.vhd
+Z6 Fclock_enable.vhd
+l0
+L5 1
+V224RQ6iE`c2g3iX0AYSjU0
+!s100 IPoKl:B@048mA`iBLM_i20
+Z7 OV;C;2020.1;71
+33
+Z8 !s110 1794662869
+!i10b 1
+Z9 !s108 1794662868.000000
+Z10 !s90 -reportprogress|300|-2008|-work|work|clock_enable.vhd|
+Z11 !s107 clock_enable.vhd|
+!i113 1
+Z12 o-2008 -work work
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 12 clock_enable 0 22 224RQ6iE`c2g3iX0AYSjU0
+!i122 1
+l27
+L19 33
+VlHAOOi0mTEJlWPbR`g_J@3
+!s100 jCZ6z<^PBN9IAo;Hb>f7j0
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edpram
+Z14 w1750055576
+R3
+R4
+!i122 0
+R0
+Z15 8dpram.vhd
+Z16 Fdpram.vhd
+l0
+L4 1
+VEP=U[`5i3<jOOAO]hLO2Z2
+!s100 zZSEbLTECWRSC27k:YO_a0
+R7
+32
+Z17 !s110 1794662868
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-2002|-work|work|dpram.vhd|
+Z19 !s107 dpram.vhd|
+!i113 1
+Z20 o-2002 -work work
+R13
+Artl
+R3
+R4
+DEx4 work 5 dpram 0 22 EP=U[`5i3<jOOAO]hLO2Z2
+!i122 0
+l34
+L27 30
+VB7V7W<GeN5FcAn6QAIB0R2
+!s100 AfJWb_eWL>c<H<OSW2V;P2
+R7
+32
+R17
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R20
+R13
+Eencoder_counter
+Z21 w1792487029
+R2
+R3
+R4
+!i122 2
+R0
+Z22 8encoder_counter.vhd
+Z23 Fencoder_counter.vhd
+l0
+L5 1
+VdM_RcfA4Cl=hb^X>@@kE:1
+!s100 =ifXWS[FRd9AcEi_BXLT@3
+R7
+33
+R8
+!i10b 1
+Z24 !s108 1794662869.000000
+Z25 !s90 -reportprogress|300|-2008|-work|work|encoder_counter.vhd|
+Z26 !s107 encoder_counter.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 15 encoder_counter 0 22 dM_RcfA4Cl=hb^X>@@kE:1
+!i122 2
+l33
+L19 66
+Vl6MHQ4Bdo4eaz0>H0lY3=0
+!s100 h:6F7zWYMf<cz4f^PM4213
+R7
+33
+R8
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R12
+R13
+Ehdmi_controler
+Z27 w1794300472
+R2
+R3
+R4
+!i122 4
+R0
+Z28 8HDMI/hdmi_controler.vhd
+Z29 FHDMI/hdmi_controler.vhd
+l0
+L5 1
+Vlk@2KHYhhL[P94jizk:_L3
+!s100 UHijWE^m[Z@]mTSRFjZcc2
+R7
+33
+R8
+!i10b 1
+R24
+Z30 !s90 -reportprogress|300|-2008|-work|work|HDMI/hdmi_controler.vhd|
+!s107 HDMI/hdmi_controler.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 14 hdmi_controler 0 22 lk@2KHYhhL[P94jizk:_L3
+!i122 4
+l54
+L35 106
+VZ][7L5Y2b4G009E@:O92F2
+!s100 M4_?<kPac5h`b?h1m;GZh2
+R7
+33
+R8
+!i10b 1
+R24
+R30
+Z31 !s107 HDMI/hdmi_controler.vhd|
+!i113 1
+R12
+R13
+Eram_clear
+Z32 w1794656584
+R3
+R4
+!i122 3
+R0
+Z33 8ram_clear.vhd
+Z34 Fram_clear.vhd
+l0
+L4 1
+VcZ9CFAzHJ3G4e8AW5lgRP0
+!s100 a9o0>Qhh^oJAd0F0EBdAd0
+R7
+33
+R8
+!i10b 1
+R24
+Z35 !s90 -reportprogress|300|-2008|-work|work|ram_clear.vhd|
+Z36 !s107 ram_clear.vhd|
+!i113 1
+R12
+R13
+Artl
+R3
+R4
+DEx4 work 9 ram_clear 0 22 cZ9CFAzHJ3G4e8AW5lgRP0
+!i122 3
+l29
+L18 61
+V3HA>J<bP3b;kOFWDzad1f2
+!s100 hNW_5<izNhT7Q7FLAo@i73
+R7
+33
+R8
+!i10b 1
+R24
+R35
+R36
+!i113 1
+R12
+R13
