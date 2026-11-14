@@ -163,6 +163,7 @@ set_location_assignment PIN_AG20 -to o_leds[7]
 set_location_assignment PIN_AG18 -to o_leds[8]
 set_location_assignment PIN_AG15 -to o_leds[9]
 set_global_assignment -name VHDL_FILE encoder_counter.vhd
+set_global_assignment -name VHDL_FILE ram_clear.vhd
 set_global_assignment -name VHDL_FILE clock_enable.vhd
 set_global_assignment -name VHDL_FILE telecran.vhd
 set_global_assignment -name VHDL_FILE dpram.vhd
