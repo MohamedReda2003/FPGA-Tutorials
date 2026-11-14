@@ -120,7 +120,7 @@ dec = (/Aq1 · Bq1 · /Bq2) + ( Aq1 · /Bq1 · Bq2)
 Soit, pour chaque sortie, **deux portes ET à trois entrées suivies d'une porte OU**, derrière **quatre bascules D** (deux par voie).
 
 <div align="center">
-<img src="media/diagramme de bloc logique__encodeur.png" alt="Schéma logique du décodeur de quadrature" width="720"/>
+<img src="media/diagramme de bloc logique__encodeur.png" alt="Schéma logique du décodeur de quadrature" width="720" bg="white" />
 
 *Schéma logique du décodeur de quadrature : quatre bascules D, quatre portes ET et deux portes OU produisant `inc` et `dec`.*
 </div>
