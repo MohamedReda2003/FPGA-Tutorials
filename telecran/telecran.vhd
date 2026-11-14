@@ -118,6 +118,15 @@ architecture rtl of telecran is
     signal r_prev_y    : std_logic_vector(9 downto 0) := (others => '0');
     signal r_toggle_pending : std_logic := '0';  -- 1 cycle de retard pour la lecture RAM
 
+    -- Effacement du framebuffer
+    signal s_clr_busy : std_logic;                         -- effacement en cours
+    signal s_clr_addr : natural range 0 to (h_res * v_res - 1);
+
+    -- Signaux effectivement appliqués au port A de la RAM (tracé OU effacement)
+    signal s_ram_addr_a : natural range 0 to (h_res * v_res - 1);
+    signal s_ram_data_a : std_logic_vector(0 downto 0);
+    signal s_ram_we_a   : std_logic;
+
 begin
 
     -- =======================================================================
@@ -183,6 +192,23 @@ begin
             i_clk    => i_clk_50,
             i_rst_n  => s_rst_n,
             o_clk_en => s_clk_en
+        );
+
+    -- =======================================================================
+    -- Effacement : un appui sur le bouton de l'encodeur gauche parcourt
+    -- toute la RAM et y écrit des zéros
+    -- =======================================================================
+    u_ram_clear : entity work.ram_clear
+        generic map (
+            g_MEM_SIZE => h_res * v_res
+        )
+        port map (
+            i_clk    => i_clk_50,
+            i_rst_n  => s_rst_n,
+            i_clk_en => s_clk_en,
+            i_btn_n  => i_left_pb,
+            o_busy   => s_clr_busy,
+            o_addr   => s_clr_addr
         );
 
     -- =======================================================================
@@ -267,7 +293,7 @@ begin
                 r_prev_x         <= s_enc_x;
                 r_prev_y         <= s_enc_y;
                 r_toggle_pending <= '0';
-            elsif (s_pos_changed = '1') then
+            elsif (s_pos_changed = '1') and (s_clr_busy = '0') then
                 -- Nouvelle position : armer l'écriture (elle part au
                 -- prochain cycle, une fois o_q_a à jour).
                 r_toggle_pending <= '1';
@@ -283,6 +309,13 @@ begin
     --   pixel éteint (0) -> allumé (1)  : on trace
     --   pixel allumé (1) -> éteint (0)  : on efface en repassant
     s_fb_wdata <= (0 => not s_fb_qa(0));
+
+    -- =======================================================================
+    -- Multiplexage du port A : l'effacement est prioritaire sur le tracé
+    -- =======================================================================
+    s_ram_addr_a <= s_clr_addr when (s_clr_busy = '1') else s_fb_addr;
+    s_ram_data_a <= "0"        when (s_clr_busy = '1') else s_fb_wdata;
+    s_ram_we_a   <= '1'        when (s_clr_busy = '1') else s_fb_we;
 
     -- =======================================================================
     -- Framebuffer : RAM dual-port (dpram.vhd fourni par le TP)
@@ -306,9 +339,9 @@ begin
         port map (
             -- Port A : tracé (domaine 50 MHz)
             i_clk_a  => i_clk_50,
-            i_addr_a => s_fb_addr,
-            i_data_a => s_fb_wdata,
-            i_we_a   => s_fb_we,
+            i_addr_a => s_ram_addr_a,
+            i_data_a => s_ram_data_a,
+            i_we_a   => s_ram_we_a,
             o_q_a    => s_fb_qa,
 
             -- Port B : affichage (domaine 27 MHz)
